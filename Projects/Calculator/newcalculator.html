@@ -1,0 +1,103 @@
+<html>
+<head>
+
+<style>
+
+button{
+
+align:center;
+background-color : lightyellow;
+border : solid 2px black;
+width :95%;
+border : solid 2px black;
+indent : center;
+}
+input
+{
+background-color : light grey;
+border : solid 3-px black;
+}
+table
+{
+background-color : grey;
+align:center;
+}
+button:hover
+{
+background-color:lightgrey;
+}
+
+</style>
+
+</head>
+<body>
+<h1><center>Proudly Made By Bharat<center></h1>
+<script>
+function view (num)
+{
+document.getElementById("result").value+=num;///num+num=value
+}
+function clr1 ()
+{
+document.getElementById("result").value=" ";
+}
+function cal ()
+{
+let x = document.getElementById("result").value;
+let y = eval(x);
+document.getElementById("result").value=y;
+}
+function back() 
+{
+    var value = document.getElementById("result").value;
+    document.getElementById("result").value = value.substr(0, value.length - 1);
+}
+
+
+</script>
+<center>
+<br>
+<br>
+<br>
+<form>
+<table border=10 >
+<tr>
+<td colspan = 3><input type = "text" id="result"/></td>
+<td><button type ="button"value="c" onclick="clr1( )" id="result"/>c</td>
+<td><button type ="button"value="c" onclick="back( )" id="result"/>back</td>
+</tr>
+
+<tr>
+<td><button type = "button" onclick="view('1')"/>1</td>
+<td><button type = "button"  onclick="view('2')"/>2</td>
+<td><button type = "button" " onclick="view('3')"/>3</td>
+<td><button type = "button"  onclick="view('*')"/>*</td>
+</tr>
+
+<tr>
+<td><button type = "button" onclick="view('4')"/>4</td>
+<td><button type = "button"  onclick="view('5')"/>5</td>
+<td><button type = "button" " onclick="view('6')"/>6</td>
+<td><button type = "button"  onclick="view('+')"/>+</td>
+</tr>
+
+<tr>
+<td><button type = "button" onclick="view('7')"/>7</td>
+<td><button type = "button" onclick="view('8')"/>8</td>
+<td><button type = "button" onclick="view('9')"/>9</td>
+<td><button type = "button" onclick="view('/')"/>/</td>
+</tr>
+
+<tr>
+<td><button type = "button" onclick="view('0')"/>0</td>
+<td><button type = "button" onclick="view('.')"/>.</td>
+<td><button type = "button" onclick="view('^')"/>^</td>
+<td><button type = "button"  onclick="cal( )"/>=</td>
+</tr>
+
+</table>
+
+</form>
+</center>
+</body>
+</html>

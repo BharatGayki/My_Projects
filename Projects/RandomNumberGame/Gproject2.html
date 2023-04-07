@@ -1,0 +1,214 @@
+<html>
+<head>
+<style>
+p{
+border:3px solid red;
+width:30%;
+background:linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+
+color:black;
+}
+body{
+
+background:radial-gradient(circle at center, red 0,orange, blue 100%);
+border:10px solid black;
+}
+span
+{
+border:10px red;
+
+
+}
+table{
+background-color:lightblue;
+border:5px dashed green;
+height:400px;
+width:50%;
+position:relative;
+top:0px;
+
+}
+.butt1
+{
+height:30px;
+width:80px;
+background-color:lightgrey;
+border:5px solid grey;
+border-color:black;
+}
+
+.butt1:hover{
+background-color:red;
+}
+
+.butt2
+{
+height:30px;
+width:80px;
+background-color:lightgrey;
+border:5px solid grey;
+border-color:black;
+}
+.butt2:hover{
+background-color:green;
+}
+.start{
+background-color:lightgreen;
+border:5px solid grey;
+border-color:black;
+}
+.start:hover{
+background-color:yellow;
+
+}
+.table2{
+align:center;
+border:5px solid darkgrey;
+height:100%;
+width:60%;
+position:relative;
+top:10px;
+left:10px;
+
+}
+
+</style>
+
+</head>
+
+<title> page 2 </title>
+<body startTimer()>
+
+<table class="table1" align="center">
+<td>
+<center>
+
+
+<table class="table2">
+<td align="center"><b>Welcome To Game ....</b><span id="result"></span></td>
+</table>
+
+
+<br><br>
+<hr></hr>
+<button onclick="onTimer()" class="start">START GAME</button>
+<br><p>Time Remains</p>
+<div id="mycounter"></div>
+<br>
+<div id="matrix"></div>
+
+<br>
+<button id="reset-button" class="butt1">Reset</button>
+
+<button  onclick= "fun1()" class="butt2"> Submit</button>
+
+
+<script>
+
+// function for submit button
+function fun1()
+{
+window.location.href="Gproject3.html";
+}
+
+// for constant array compare if else
+var con_arr=new Array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25);
+var n=0;
+
+
+// for text Enter & store value of first page to second
+document.getElementById("result").innerHTML=localStorage.getItem("textvalue");
+
+//for timer set upto 1 min.
+i = 60;
+function onTimer() {
+  document.getElementById('mycounter').innerHTML = i;
+  i--;
+  if (i < 0) {
+    alert('time up');
+	window.location.href="Gproject3.html";
+  }
+  else {
+    setTimeout(onTimer, 1000);
+  }
+}
+
+// function to generate random number
+
+
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+// empty array to hold the matrix
+let matrix = [];
+
+// fill the matrix with random numbers
+for (let i = 0; i < 5; i++) {
+  matrix[i] = [];
+  for (let j = 0; j < 5; j++) {
+    let randomNumber;
+    do {
+      randomNumber = getRandomNumber(1, 25);
+    } while (matrix.flat().includes(randomNumber)); // ensure unique random numbers
+    matrix[i][j] = randomNumber;
+  }
+}
+
+// create a button element for each number in the matrix
+for (let i = 0; i < 5; i++) {
+  for (let j = 0; j < 5; j++) {
+    let button = document.createElement("button");
+    button.innerHTML = matrix[i][j];
+    button.style.width = "50px";
+    button.style.height = "50px";
+    button.style.margin = "2px";
+    button.style.color = "red";
+    button.style.border = "dotted black ";
+
+   	
+	//changes button colour
+button.style.backgroundColor = "initial";
+button.addEventListener("click", function() {
+   //   alert("You clicked: " + this.innerHTML);
+      this.style.backgroundColor = "Orange";
+    });
+	
+	button.addEventListener("click", function(){
+	console.log(matrix[i][j])
+	
+	console.log(+matrix[i][j]);
+	if(matrix[i][j]== con_arr[n]){
+	console.log("sucesses");
+
+localStorage.setItem("score",n);
+
+	n++;
+	}else{
+	window.location.href="Gproject3.html";
+	
+	
+	}
+
+	});
+
+   
+	document.getElementById("matrix").appendChild(button);
+  }
+  let linebreak = document.createElement("br");
+  document.getElementById("matrix").appendChild(linebreak);
+}
+
+// add event listener to reset button
+document.getElementById("reset-button").addEventListener("click", function() {
+  location.reload();
+});
+
+
+
+</script>
+</td>
+</table>
+</center>
+</body>
+</html>

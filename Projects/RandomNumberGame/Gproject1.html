@@ -1,0 +1,71 @@
+<html>
+
+<head> 
+<title>Welcome To The Game</title>
+<style>
+
+body 
+{
+  background-color: lightblue;
+}
+
+input[type = "text"]
+{
+width:40%;
+height:50px;
+font-size:20px;
+
+}
+input[type = "submit"]
+{
+width:20%;
+height:30px;
+background-color: blue;
+color:yellow;
+font-size:20px;
+
+}
+table{
+border:10px solid black;
+height:80%;
+width:90%;
+}
+h1{
+text-decoration:underline;
+}
+
+
+
+
+</style>
+
+<script>
+function passvalues()
+{
+var firstname=document.getElementById("txt").value;
+localStorage.setItem("textvalue",firstname);
+
+}
+
+</script>
+
+</head>
+
+<body>
+<table align="center">
+<td>
+<center>
+<h1><center>Welcome to the Game</center></h1><br>
+
+<form action="Gproject2.html">
+<input type="text" required placeholder ="Enter player Name" id="txt" /><br><br>
+<input type="submit" value="Start" onclick="passvalues();"  />
+
+
+
+</form>
+</center>
+</td>
+</table>
+</body>
+</html>
