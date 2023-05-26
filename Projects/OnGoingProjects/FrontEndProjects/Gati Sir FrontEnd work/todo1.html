@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <link rel="stylesheet" href="todo1.css">
+</head>
+<body>
+    <div class="container">
+        <div class="todoapp">
+            <h2>Gati Sir Project<img src="icon.png"></h2>
+            <div class="row">
+                <div id="inputs-container">
+                    <!-- Initial set of input fields -->
+                    <div class="contact-inputs">
+                        <input type="text" class="contact-input" placeholder="Name">
+                        <input type="text" class="contact-input" placeholder="Middle Name">
+                        <input type="text" class="contact-input" placeholder="Last Name">
+                        <input type="email" class="contact-input" placeholder="Email ID">
+                        <input type="tel" class="contact-input" placeholder="Phone Number">
+                        <button class="remove-input" onclick="removeInput(this)">X</button>
+                    </div>
+                </div>
+                <div class="add-input">
+                    <button onclick="addInput()">Add</button>
+                </div>
+                <div class="save-button">
+                    <button onclick="saveContacts()">Save</button>
+                </div>
+            </div>
+            <ul id="list-container"></ul>
+            <marquee width="60%" direction="right" height="50px">
+                Proudly Made By भारत
+            </marquee>
+        </div>
+    </div>
+    <script src="todo.js"></script>
+</body>
+</html>

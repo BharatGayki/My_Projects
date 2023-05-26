@@ -1,0 +1,136 @@
+body {
+  background-color: #f7f7f7;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.todoapp {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.contact-inputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.remove-input {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.add-button-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.add-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.save-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+.add-input{
+
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.save-button button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.add-input button{
+
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: relative;
+}
+
+li span {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+li span:hover {
+  color: #ff0000;
+}
+
+.checked {
+  background-color: #f7f7f7;
+  text-decoration: line-through;
+  color: #888;
+}
+
+marquee {
+  margin-top: 20px;
+}
